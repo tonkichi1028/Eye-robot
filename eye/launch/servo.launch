@@ -1,0 +1,10 @@
+<launch>
+
+<node pkg = "ros_start" type = "keyboard_driver.py" name = "keyboard_driver" output="screen"/>
+<node pkg = "ros_start" type = "keys_to_servo.py" name = "keys_to_servo"/>
+
+<node pkg = "rosserial_python" type = "serial_node.py" name = "serial_node">
+     <param name="port"              type="string"               value="/dev/ttyACM0"/>
+</node>
+
+</launch>
